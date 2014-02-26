@@ -1,8 +1,9 @@
 require 'spec_helper'
 require 'fizz_buzz'
 
-describe fizz_buzz do
-	output = fizz_buzz()
+describe 'fizz_buzz' do
+	replace_rules = [[3, 'Fizz'], [5, 'Buzz'], [15, 'FizzBuzz'], [13, 'meeek']]
+	output = fizz_buzz(1, 100, replace_rules)
 	it 'prints 1' do
 		expect(output[0]).to eq(1)
 	end

@@ -1,18 +1,5 @@
-def fizz_buzz()
-	output = []
-	100.times do |index|
-		number = index + 1
-		if number % 13 == 0
-			output << 'meeek'
-		elsif number % 15 == 0
-			output << 'FizzBuzz'
-		elsif number % 3 == 0
-			output << 'Fizz'
-		elsif number % 5 == 0
-			output << 'Buzz'
-		else
-			output << number
-		end
+def reverse(output)
+	output.each_with_index do |number, index|
 		if output[index].is_a?(String) && number % 2 == 0
 			output[index] = output[index].reverse
 		end
@@ -21,4 +8,22 @@ def fizz_buzz()
 		end
 	end
 	output
+end
+
+def replace(output, replace_rules)
+	output.each do |number|
+		index = number - 1	
+		for i in 0...replace_rules.length do
+			if number % replace_rules[i][0] == 0
+				output[index] = replace_rules[i][1]
+			end
+		end
+	end
+	output
+end
+
+def fizz_buzz(start_number, end_number, replace_rules)
+	output = (start_number..end_number).to_a
+	output = replace(output, replace_rules)
+	reverse(output)
 end
