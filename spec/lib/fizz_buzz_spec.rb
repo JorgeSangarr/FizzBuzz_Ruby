@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'fizz_buzz'
 
-describe fizz_buzz do
+describe 'fizz_buzz' do
 	output = fizz_buzz()
 	it 'prints 1' do
 		expect(output[0]).to eq(1)

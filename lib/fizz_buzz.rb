@@ -1,4 +1,4 @@
-def fizz_buzz()
+def fizz_buzz
 	output = []
 	100.times do |index|
 		number = index + 1
@@ -13,10 +13,10 @@ def fizz_buzz()
 		else
 			output << number
 		end
-		if output[index].is_a?(String) && number % 2 == 0
+		if output[index].is_a?(String) && number.even?
 			output[index] = output[index].reverse
 		end
-		if output[index].is_a?(Integer) && number % 2 == 1
+		if output[index].is_a?(Integer) && number.odd?
 			output[index] = output[index].to_s.reverse.to_i
 		end
 	end
