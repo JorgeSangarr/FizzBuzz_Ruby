@@ -1,9 +1,9 @@
 def reverse(output)
 	output.each_with_index do |number, index|
-		if output[index].is_a?(String) && number % 2 == 0
+		if number.is_a?(String) && (index+1).even?
 			output[index] = output[index].reverse
 		end
-		if output[index].is_a?(Integer) && number % 2 == 1
+		if number.is_a?(Integer) && (index+1).odd?
 			output[index] = output[index].to_s.reverse.to_i
 		end
 	end
@@ -12,7 +12,7 @@ end
 
 def replace(output, replace_rules)
 	output.each do |number|
-		index = number - 1	
+		index = number-1	
 		for i in 0...replace_rules.length do
 			if number % replace_rules[i][0] == 0
 				output[index] = replace_rules[i][1]
